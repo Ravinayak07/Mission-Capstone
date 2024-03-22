@@ -1,0 +1,1059 @@
+Analysize the below code and write a brief introduction about the EDA
+
+
+
+
+# Financial fraud detection using banking data by machine learning techniques
+
+
+
+
+# In[1]:
+
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+# In[3]:
+
+
+df=pd.read_csv('data/Fraud.csv')
+
+
+# In[4]:
+
+
+df.columns
+
+
+# In[5]:
+
+
+df.shape
+
+
+# In[6]:
+
+
+df.size
+
+
+# In[7]:
+
+
+df.head()
+
+
+# In[8]:
+
+
+df.tail()
+
+
+# In[9]:
+
+
+df.sample(5)
+
+
+# In[14]:
+
+
+df.dtypes
+
+
+# In[15]:
+
+
+df.dtypes
+
+
+# In[18]:
+
+
+pd.set_option('display.float_format', lambda x: '%0.4f' % x)
+
+
+# In[19]:
+
+
+round(df[['step', 'amount', 'oldbalanceOrg', 'newbalanceOrig','oldbalanceDest',
+                'newbalanceDest',]].describe().T,
+      2)
+
+
+# In[20]:
+
+
+df[['step', 'amount', 'oldbalanceOrg', 'newbalanceOrig','oldbalanceDest',
+                'newbalanceDest','isFraud',
+       'isFlaggedFraud']].corr()
+
+
+# there is MULTI_COLLINEARITY between independent features <br>
+# <h6> ( 'oldbalanceDest', 'newbalanceDest' ) = 0.9766 <br>
+#     ( 'oldbalanceOrg', 'newbalanceOrg') = 0.9988  </h6>
+# Need to remove one from each of two correlation
+
+# In[21]:
+
+
+df[df['amount']==0]
+
+
+# all transactions which contain 'amount'=0 , are fraud transactions. <br>
+# Its obvious that if someone having NIL amount in their account, then their is no sense to transfer money.<br>
+# Thus most probabily , fraudulent agents are targeting random accounts , and may be they don't aware about account balance.
+
+# In[22]:
+
+
+df[df['isFlaggedFraud']==1]
+
+
+# All transactions which are Flag fraud are actually fraud transactions.
+
+# In[23]:
+
+
+df[(df['amount']==df['oldbalanceOrg']) & (df['isFraud']==1)]
+
+
+# if 'amount'=='oldbalanceOrg', then its Fraud Transactions. <br>
+# It means , whenever fraudulent agents are aware about target account balance. <br>
+# then their motive was to transfer all account balanced to their respected destination accounts.
+
+# # Data Preprocessing
+
+# In[24]:
+
+
+df.isnull().sum()
+
+
+# No null values present in dataset
+
+# In[25]:
+
+
+df[df.duplicated()]
+
+
+# In[26]:
+
+
+df.duplicated().sum()
+
+
+# In[27]:
+
+
+df['isFraud'].value_counts()
+
+
+# Need to balanced this data.
+
+# # Exploratory Data Analysis ( EDA )
+
+# In[28]:
+
+
+df.columns
+
+
+# In[29]:
+
+
+sns.histplot(x='step', data=df,hue='isFraud');
+
+
+# It is difficult to identify fraud transcation time duration,<br>
+# but we noticed that most of the transactions are below 400 time unit<br>
+# where 1 time unit = 1 hr
+
+# In[31]:
+
+
+sns.rugplot(x='amount', data=df, height=.08, color='darkblue')
+
+
+# Most of the transaction amounts are small amount and <br>
+# very few transactions are having large amount transfer. <br>
+# Thus, their is higher probability that these transactions may be done by fraudulent agents.
+
+# In[32]:
+
+
+df['isFraud'].value_counts()
+
+
+# In[33]:
+
+
+sns.countplot(x=df['isFraud'])
+plt.title("un-balanced Dataset")
+plt.show()
+
+
+# This histograph clearly shows that our dataset is highly Un_Balanced. <br>
+# Because even in real life , the ratio between fraud transc. and normal trans are one side weighted. <br>
+# Need to handle this , otherwise it will impact our model Training. <br>
+
+# In[34]:
+
+
+df['type'].value_counts()
+
+
+# In[35]:
+
+
+sns.catplot(data=df, x="type", y="isFraud")
+
+
+# Most of the Fraud transactions are performed on "TRANSFER" and "CASH_OUT" type.
+
+# In[36]:
+
+
+df.loc[(df['type']=="CASH_OUT") & (df['isFraud']==1)]
+
+
+# In[37]:
+
+
+df.loc[(df['type']=="TRANSFER") & (df['isFraud']==1)]
+
+
+# It is clear that fraudent agents only targeted "CASH_OUT" and "TRANSFER" type of trans.
+# becuase 100% fraud transactions are lie inside these two types.
+
+# In[38]:
+
+
+# Calculating individal % of each category of 'type' column in our transactions
+#   using pie chart
+
+plt.pie(x = df['type'].value_counts(),
+       autopct='%.2f',labels=['CASH_OUT','PAYMENT','CASH_IN','TRANSFER','DEBIT'])
+plt.show()
+
+
+# Approx. 69% transactions are of type "CASH_OUT" and "PAYMENT", <br>
+#     due to which fraudulent agents targeted these two type.
+
+# ### Outliers Detection 
+
+# In[39]:
+
+
+fig = plt.figure(figsize=(10,5))
+sns.boxplot(df)
+plt.show()
+
+
+# In[40]:
+
+
+# using iqr method in "step" feature...
+
+per25=df['step'].quantile(0.25)
+per75=df['step'].quantile(0.75)
+iqr=per75-per25
+up_limit=per75+(1.5*iqr)
+low_limit=per25-(1.5*iqr)
+print("upper limit :- ",up_limit)
+print("upper limit :- ",low_limit)
+
+
+# In[41]:
+
+
+df[df["step"]>603]
+
+
+# There are more than 100 thousand records considered as outlier in "step" feature .<br>
+# we can't remove these records , because of value.<br>
+# 
+# and , <br>
+# other independent features (numeric ) are denotes amount ( money transaction ), <br>
+# thus removing these column is not good option.<br>
+# becuase higher amount may have higher probability to denote fraud transaction.
+
+# In[42]:
+
+
+sns.heatmap(df[['step', 'amount', 'oldbalanceOrg', 'newbalanceOrig','oldbalanceDest',
+                'newbalanceDest', 'isFraud','isFlaggedFraud']].corr(),
+            annot=True
+           )
+plt.show()
+
+
+# 1) Their is multi_collinearity between 4 independent features
+# <h6> ( 'oldbalanceDest', 'newbalanceDest' ) = 0.9766 <br>
+#     ( 'oldbalanceOrg', 'newbalanceOrig') = 0.9988  </h6>
+# Need to remove one from each of two correlation <br>
+# <br>
+# 2) Best option is to remove 'newbalanceOrig' and 'newbalanceDest', <br>
+# becuase they are less correlated with dependent feature ( "isFraud"), <br>
+# as compare to other two one.
+
+# In[43]:
+
+
+# df.corr()["isFraud"]  
+df.corr(numeric_only=True)["isFraud"]
+
+
+# # Feature selection 
+
+# In[44]:
+
+
+# function which returns un_important features ( only numeric ).
+
+def correlation(dataset,threshold):
+    
+    """ 
+    used to store un_important column names
+    and set() type stores only unique values
+    so, that no duplicated column name will store.
+    """
+    column_corr=set()
+    
+    # storing correlation matrix
+    corr_matrix=dataset.corr()
+    
+    for i in range (len(corr_matrix.columns)):
+        for j in range (i):
+            
+            # comparing corr. values with threshold
+            if corr_matrix.iloc[i,j]>threshold:
+                
+                # if true, then fateching column name
+                colname=corr_matrix.columns[i]
+                
+                # adding column name to column_corr variable.
+                column_corr.add(colname)
+    return column_corr
+
+
+# In[48]:
+
+
+# # calling ... with threshold value 0.9
+# corr_matrix = df.corr(numeric_only=True)
+
+# correlated_features=correlation(df,0.9)
+
+# Calculate correlation matrix with numeric_only=True
+corr_matrix = df.corr(numeric_only=True)
+
+# Find correlated features based on a threshold of 0.9
+correlated_features = correlation(corr_matrix, 0.9)
+
+# Define function to find correlated features
+def correlation(corr_matrix, threshold):
+    correlated_features = set()
+    for i in range(len(corr_matrix.columns)):
+        for j in range(i):
+            if abs(corr_matrix.iloc[i, j]) > threshold:
+                colname = corr_matrix.columns[i]
+                correlated_features.add(colname)
+    return correlated_features
+
+
+# In[49]:
+
+
+# total number of un_important features
+len(set(correlated_features))
+
+
+# In[50]:
+
+
+# name of these columns ( independent features)
+correlated_features
+
+
+# In[51]:
+
+
+# Removing these features from DataFrame.
+
+df=df.drop(correlated_features,axis=1)
+
+
+# In[54]:
+
+
+# After removing ...
+df.head()
+
+
+# <h4>Checking variations of data in features </h4> 
+# 
+# if variation is zero (0) , means that column ( feature ) is not <br>
+# having any correlation with dependent features.
+# and we need to remove that column.
+
+# In[55]:
+
+
+from sklearn.feature_selection import VarianceThreshold
+
+
+# In[56]:
+
+
+"""
+threshold=0  means feature having only 1 value ( no variation)
+threshold=1 means feature having 2 different values ( small variation)
+etc
+"""
+Var_Thresh=VarianceThreshold(threshold=0)
+Var_Thresh.fit(df[['step','amount','oldbalanceOrg','oldbalanceDest','isFlaggedFraud']])
+Var_Thresh.get_support()
+
+
+# True :- having variations <br>
+# False :- not having variations
+
+# In[57]:
+
+
+# when threshold=1
+
+Var_Thresh=VarianceThreshold(threshold=1)
+Var_Thresh.fit(df[['step','amount','oldbalanceOrg','oldbalanceDest','isFlaggedFraud']])
+Var_Thresh.get_support()
+
+
+# 'isFlaggedFraud' feature having Low_variation in data , <br>
+# but we can't remove that column, because it  contain these two values (0,1) <br>
+# which helps to identify whether our transc. is fraud or not <br>
+# and ,<br>
+# <br>
+# it also shows good correlationship with dependent feature ( target feature ) <br>
+# Thus removing this feature is not good option.
+
+# <h4> Checking whether categorical features are useful or not </h4> 
+
+# In[58]:
+
+
+df.dtypes
+
+
+# we have 3 categorical features "type" , "nameOrig" , "nameDest"
+
+# In[59]:
+
+
+print(" type having these unique values :- \n",df["type"].unique())
+print("\n\n nameOrig having these unique values :- \n",df["nameOrig"].unique())
+print("\n\n nameDest having these unique values :- \n",df["nameDest"].unique())
+
+
+# we have 4 unique values in "type" feature,<br>
+# 
+# and "nameOrig" and "nameDest" contain more unique values <br>
+# Lets check their count...
+
+# In[60]:
+
+
+df['nameOrig'].value_counts()
+
+
+# In[61]:
+
+
+df['nameDest'].value_counts()
+
+
+# most of the data inside "nameOrig" and "nameDest" <br>
+# are unique ( approx 90% and 60% ), means it will be not useful for model training .<br>
+# Thus, good option is to remove them.<br>
+# and even their are just Account names.
+
+# In[62]:
+
+
+df=df.drop({'nameOrig','nameDest'},axis=1)
+
+
+# In[63]:
+
+
+df.head()
+
+
+# # Feature Encoding
+
+# There is only one categorical column ( feature ) which is "type"
+
+# In[64]:
+
+
+df["type"].unique()
+
+
+# In[65]:
+
+
+df["type"].value_counts()
+
+
+# We will replace large count class with bigger numeric number, <br>
+# so, it will helps model for batter understanding of data pattern while training
+
+# In[66]:
+
+
+df['type']=df['type'].map({'CASH_OUT':5, 'PAYMENT':4,'CASH_IN':3,'TRANSFER':2,'DEBIT':1})
+
+
+# In[67]:
+
+
+df.head()
+
+
+# In[68]:
+
+
+df["type"].unique()
+
+
+# In[69]:
+
+
+df["type"].value_counts()
+
+
+# # Handling Un-Balanced Data
+
+# In[70]:
+
+
+df["isFraud"].value_counts()
+
+
+# In[71]:
+
+
+"""
+Creating 2 new DataFrame ,
+one contain fraud transaction
+and another one contain genuine transaction
+"""
+normal_transaction=df[df['isFraud']==0]
+fraud_transaction=df[df['isFraud']==1]
+
+
+# In[72]:
+
+
+normal_transaction.head()
+
+
+# In[73]:
+
+
+fraud_transaction.head()
+
+
+# In[74]:
+
+
+print(normal_transaction.shape)
+print(fraud_transaction.shape)
+
+
+# In[75]:
+
+
+# taking random 8213 records from normal_transaction
+
+normal_transaction=normal_transaction.sample(n=8213)
+
+
+# In[76]:
+
+
+"""
+Now, we have 50-50% fraud and normal transaction data.
+next step is to concatenating them
+"""
+print(normal_transaction.shape)
+print(fraud_transaction.shape)
+
+
+# In[77]:
+
+
+normal_transaction['amount'].describe()
+
+
+# mean of normal transaction is less as compare to fraud trans.
+
+# In[78]:
+
+
+fraud_transaction['amount'].describe()
+
+
+# mean of fraud transaction is higher then normal trans.
+
+# In[80]:
+
+
+# Concatenating these two dataset , to remove un-balanced dataset problem
+
+# axis=0 means adding at rows
+new_df=pd.concat([normal_transaction,fraud_transaction], axis=0)
+
+
+# In[81]:
+
+
+new_df.head()
+
+
+# In[82]:
+
+
+new_df.tail()
+
+
+# NOTICED:-
+# "Fraud_transcation" dataset added at the end of "normal_transcation" dataset
+
+# In[83]:
+
+
+new_df.shape
+
+
+# # Train-Test Split
+
+# In[84]:
+
+
+# independent features
+X=new_df.drop("isFraud",axis=1)
+
+# dependent feature
+y=new_df["isFraud"]
+
+
+# In[85]:
+
+
+X.shape
+
+
+# In[86]:
+
+
+y.shape
+
+
+# In[87]:
+
+
+from sklearn.model_selection import train_test_split
+
+
+# In[88]:
+
+
+# stratify will evenly distribute the data values
+
+x_train,x_test,y_train,y_test=train_test_split(X , y , test_size=0.2, stratify=y , random_state=0)
+
+
+# In[89]:
+
+
+print("x-train :- ", x_train.shape)
+print("x-test :-  ",  x_test.shape)
+print("y-train :- ", y_train.shape)
+print("y-test :-  ",  y_test.shape)
+
+
+# In[90]:
+
+
+y_test.value_counts()
+
+
+# In[91]:
+
+
+y_train.value_counts()
+
+
+# Our "isFraud" values are evenly distributed amoungs training and testing data.
+
+# # Feature Scaling
+
+# In[92]:
+
+
+from sklearn.preprocessing import StandardScaler
+
+
+# In[93]:
+
+
+scaler=StandardScaler()
+
+
+# In[94]:
+
+
+scaler.fit(x_train)
+
+
+# In[95]:
+
+
+x_train_scaler=scaler.transform(x_train)
+
+
+# In[96]:
+
+
+x_test_scaler=scaler.transform(x_test)
+
+
+# In[97]:
+
+
+x_train_scaler
+
+
+# In[98]:
+
+
+x_test_scaler
+
+
+# # Training and Evaluating model
+
+# ### Logistic Regression
+
+# In[99]:
+
+
+from sklearn.linear_model import LogisticRegression
+
+
+# In[100]:
+
+
+log_model=LogisticRegression()
+
+
+# In[101]:
+
+
+log_model.fit(x_train_scaler,y_train)
+
+
+# In[102]:
+
+
+y_pred=log_model.predict(x_test_scaler)
+
+
+# In[103]:
+
+
+# for accuracy check :- 
+
+from sklearn.metrics import accuracy_score
+
+
+# In[104]:
+
+
+print("- - - - - - - - - - -")
+print(accuracy_score(y_test.values,y_pred)*100)
+print("- - - - - - - - - - -")
+
+
+# ### Random Forest Classifier
+
+# In[105]:
+
+
+from sklearn.ensemble import RandomForestClassifier
+
+
+# In[106]:
+
+
+rand_model=RandomForestClassifier()
+
+
+# In[107]:
+
+
+rand_model.fit(x_train_scaler,y_train)
+
+
+# In[108]:
+
+
+y_pred=rand_model.predict(x_test_scaler)
+
+
+# In[109]:
+
+
+print("- - - - - - - - - - -")
+print(accuracy_score(y_test.values,y_pred)*100)
+print("- - - - - - - - - - -")
+
+
+# ### Support Vector Machine ( SVM )
+
+# In[110]:
+
+
+from sklearn.svm import SVC
+
+
+# In[111]:
+
+
+svm_model=SVC()
+
+
+# In[112]:
+
+
+svm_model.fit(x_train_scaler,y_train)
+
+
+# In[113]:
+
+
+y_pred=svm_model.predict(x_test_scaler)
+
+
+# In[100]:
+
+
+print("- - - - - - - - - - -")
+print(accuracy_score(y_test.values,y_pred)*100)
+print("- - - - - - - - - - -")
+
+
+# ### BernoulliNB
+
+# In[114]:
+
+
+from sklearn.naive_bayes import BernoulliNB
+
+
+# In[115]:
+
+
+bnb_model=BernoulliNB()
+
+
+# In[116]:
+
+
+bnb_model.fit(x_train_scaler,y_train)
+
+
+# In[117]:
+
+
+y_pred=bnb_model.predict(x_test_scaler)
+
+
+# In[118]:
+
+
+print("- - - - - - - - - - -")
+print(accuracy_score(y_test.values,y_pred)*100)
+print("- - - - - - - - - - -")
+
+
+# ### GaussianNB
+
+# In[119]:
+
+
+from sklearn.naive_bayes import GaussianNB
+
+
+# In[120]:
+
+
+gnb_model=GaussianNB()
+
+
+# In[121]:
+
+
+gnb_model.fit(x_train_scaler,y_train)
+
+
+# In[122]:
+
+
+y_pred=gnb_model.predict(x_test_scaler)
+
+
+# In[123]:
+
+
+print("- - - - - - - - - - -")
+print(accuracy_score(y_test.values,y_pred)*100)
+print("- - - - - - - - - - -")
+
+
+# <h3> Conclusion </h3>
+# 
+# Random Forest Classifier  Selected
+
+# # Preparing Model for deployment
+
+# In[124]:
+
+
+import pickle
+
+
+# In[125]:
+
+
+pickle.dump(rand_model,open('model.sav','wb'))
+
+
+# In[126]:
+
+
+#### Saving the StandadrdScaler object 'scaler'
+
+pickle.dump(scaler,open('scaler.sav','wb'))
+
+
+# <h3>Let's check whether our model working fine or not ?</h3> 
+# 
+
+# In[114]:
+
+
+rand_model=pickle.load(open('model.sav','rb'))
+
+
+# In[127]:
+
+
+# loading the scaler file for scaling input array
+new_scaler=pickle.load(open('scaler.sav','rb'))
+
+
+# In[128]:
+
+
+new_df.head()
+
+
+# In[129]:
+
+
+# creating ndarray to pass this array as an input data
+input_array=np.array([[228,5,117563.1100,0.0000,208908.4100,0]])
+input_array
+
+
+# In[130]:
+
+
+# scaling the input_array datapoints
+
+input_array_scale=new_scaler.transform(input_array)
+input_array_scale
+
+
+# In[131]:
+
+
+pred=rand_model.predict(input_array_scale)
+pred
+
+
+# Prediction is correct :)
+
+# <h3>Final Conclusion</h3> 
+
+# 1) There is no missing or duplicate values in this dataset
+# 2) Having outliers, but it is not good idea to remove them,<br>
+# becuase higher values of amount and account balance having <br>
+# higher porbability to denote fraud transactions.<br>
+# 3) some columns having multi_collinearity, thus<br>
+# removed one of them.<br>
+# 4) "amount" , "isFlaggedFraud" are key features,
+# they impact the Fraud prediction.<br>
+# means , we need to focused on large transcation,<br>
+# and condition where "amount"=="oldbalanceOrig"<br>
+# 5) Best option is to deploy this model on Cloud server,<br>
+# and automate this ml model using cloud services.
+
+# # Questions:
+# 
+# ### 1. Data Cleaning:
+# - **Missing Values:** No missing data found.
+# - **Outliers:** Identified outliers in time data, but not removed.
+# - **Multi-Collinearity:** Fixed by removing correlated features.
+# 
+# ### 2. Fraud Detection Model:
+# - Chose Random Forest Classifier for its accuracy in detecting fraud.
+# 
+# ### 3. Variable Selection:
+# - Removed correlated features and those with low variations.
+# 
+# ### 4. Model Performance:
+# - Random Forest had the highest accuracy among tested models.
+# 
+# ### 5. Key Factors Predicting Fraud:
+# - High transaction amounts and flagged transactions indicate fraud.
+# 
+# ### 6. Reasoning for Key Factors:
+# - Large transactions and flagged ones are likely fraudulent.
+# 
+# ### 7. Prevention Strategies:
+# - Monitor high-value transactions and update security measures.
+# 
+# ### 8. Evaluating Prevention Measures:
+# - Track changes in fraud patterns and update the model.
+# 
+# ### Additional Note:
+# - The model is saved for deployment. [GitHub Link](https://github.com/hardikjp7/Fraudulent-Transactions-Prediction)
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
