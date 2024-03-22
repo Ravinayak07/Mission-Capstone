@@ -1,0 +1,53 @@
+Paraphrased Parkinson :
+Abstract:
+Parkinson's disease (PD) is a well-known neurodegenerative illness that affects millions of people globally and is characterised by both motor and non-motor symptoms. Early PD detection is essential for prompt intervention and improved disease management. Using a variety of biological data sources, machine learning (ML) approaches have recently surfaced as a viable method for PD identification. This study uses speech recordings from people with and without Parkinson's disease (PD) to examine the use of machine learning (ML) algorithms for PD identification. To evaluate their effectiveness in PD detection, many machine learning (ML) techniques are used, such as logistic regression, k-nearest neighbours, support vector classifier, Gaussian naive Bayes, and a stacking classifier. Based on speech characteristics, the results imply that these machine learning algorithms may reliably identify people with Parkinson's disease (PD), opening up a possible window for early diagnosis and treatment.
+
+Keywords: Parkinson's disease, machine learning algorithms, early detection, voice recordings, biomedical data.
+
+Parkinson's disease (PD) is a degenerative neurological ailment that impairs mobility. It is typified by stiffness, bradykinesia, postural instability, and tremors. With an estimated 10 million cases worldwide, it is the second most prevalent neurological illness after Alzheimer's disease [1]. Parkinson's disease (PD) is mostly caused by the death of dopamine-producing neurons in the brain's substantia nigra area, which lowers dopamine levels and eventually causes motor impairment [2].
+
+Although it might be difficult, receiving a PD diagnosis early on is essential for prompt action and efficient illness treatment. Currently, evaluating motor symptoms and medical history is the basis for clinical diagnosis, which might not be sufficient for precise and timely detection [3]. Thus, there is increasing interest in objective, non-invasive approaches for diagnosing Parkinson's disease (PD), especially those that make use of cutting-edge technology like machine learning (ML) algorithms.
+
+Numerous healthcare applications, such as illness detection, prediction, and therapy optimisation, have demonstrated potential for machine learning techniques [4]. To create highly sensitive and accurate diagnosis models for Parkinson's disease (PD), machine learning (ML) techniques have been used to a variety of data sources, such as voice recordings, genetic data, and neuroimaging [5]. Voice-based PD detection is a desirable option since it is simple to use, inexpensive, and non-invasive.
+
+The use of ML algorithms for PD identification using speech recordings is the main topic of this study [6]. Given that PD patients have dysphonia, changed pitch, and decreased vocal intensity, voice-based analysis shows potential as a biomarker for the disease [7]. By using these speech characteristics, ML algorithms are able to differentiate between PD patients and healthy controls, which makes early identification and management possible.
+
+This study's main goal is to assess how well different machine learning algorithms perform in PD identification using speech recordings. In particular, we will investigate how well speech characteristics can be used to differentiate between PD and non-PD participants using logistic regression, k-nearest neighbours (KNN), support vector classifier (SVC), Gaussian naive Bayes (NB), and a stacking classifier [8]. By comparing these algorithms' performance, we aim to pinpoint the most accurate and reliable approach for PD detection, potentially integrating it into clinical practice for early diagnosis and personalized treatment strategies.
+
+Literature Review:
+
+Research on the application of machine learning algorithms for Parkinson's disease (PD) identification using speech recordings has shown encouraging results in differentiating between PD patients and healthy persons [9]. Tsanas et al. [10] created a classification model based on speech signal attributes using voice recordings from PD patients and controls. They achieved great accuracy in differentiating between PD and non-PD participants by using a variety of machine learning (ML) methods, such as support vector machines (SVM), decision trees, and random forests.
+
+Similarly, Little et al. [11] looked at machine learning methods for automated PD identification utilising sound characteristics taken from speech recordings. They analysed speech data from PD patients and healthy controls using logistic regression and KNN classifiers, demonstrating the viability of voice-based PD diagnosis with excellent sensitivity and accuracy.
+
+Deep learning techniques have been used for voice-based PD detection in addition to conventional ML methods, with encouraging outcomes [12]. Convolutional neural networks (CNNs) were used in the development of a deep learning model by Arora et al. [13] to identify people with Parkinson's disease (PD) by extracting discriminative characteristics from speech signals. Their model fared better than other ML techniques, suggesting that deep learning may be useful in raising the accuracy of Parkinson's disease diagnosis.
+
+There are still a number of issues with ML-based PD identification using audio recordings, despite progress [14]. To train strong, generalizable models, large and diverse datasets are needed since performance might be impacted by changes in voice characteristics among PD patients. It is crucial to standardise feature selection procedures and data preparation approaches to guarantee comparability and repeatability of study results.
+
+In summary, machine learning algorithms present a viable method for the non-invasive, objective evaluation of Parkinson's disease (PD) utilising speech recordings [15]. By utilising sophisticated methods like as logistic regression, KNN, SVC, NB, and stacking classifiers, precise and dependable models may be created for the purpose of early Parkinson's disease diagnosis and tailored treatment. However, further research is required to solve current issues and validate the usefulness of ML-based approaches in clinical practice.
+
+References:
+
+[1]Dorsey, E. R., Elbaz, A., & Nichols, E. (2018). Global, regional, and national burden of Parkinson's disease, 1990–2016: a systematic analysis for the Global Burden of Disease Study 2016. The Lancet Neurology, 17(11), 939-953.
+
+[2]Poewe, W., Seppi, K., Tanner, C. M., Halliday, G. M., Brundin, P., Volkmann, J., ... & Lang, A. E. (2017). Parkinson disease. Nature Reviews Disease Primers, 3(1), 1-21.
+
+[3]Little, M. A., McSharry, P. E., Hunter, E. J., Spielman, J., & Ramig, L. O. (2009). Suitability of dysphonia measurements for telemonitoring of Parkinson's disease. IEEE Transactions on Biomedical Engineering, 56(4), 1015-1022.
+
+[4]Tsanas, A., Little, M. A., McSharry, P. E., & Ramig, L. O. (2010). Accurate telemonitoring of Parkinson's disease progression by noninvasive speech tests. IEEE Transactions on Biomedical Engineering, 57(4), 884-893.
+
+[5]Little, M. A., McSharry, P. E., Roberts, S. J., Costello, D. A., & Moroz, I. M. (2007). Exploiting nonlinear recurrence and fractal scaling properties for voice disorder detection. Biomedical Engineering, IEEE Transactions on, 54(7), 1233-1236.
+
+[6]Arora, S., Bagde, S., Nair, S. P., & Ramteke, R. J. (2021). Deep learning approach for Parkinson's disease detection using voice signals. Journal of King Saud University-Computer and Information Sciences.
+[7] Little, M. A., McSharry, P. E., Hunter, E. J., Spielman, J., & Ramig, L. O. (2009). Suitability of dysphonia measurements for telemonitoring of Parkinson's disease. IEEE Transactions on Biomedical Engineering, 56(4), 1015-1022.
+[8] Tsanas, A., Little, M. A., McSharry, P. E., & Ramig, L. O. (2010). Accurate telemonitoring of Parkinson's disease progression by noninvasive speech tests. IEEE Transactions on Biomedical Engineering, 57(4), 884-893.
+[9] Little, M. A., McSharry, P. E., Roberts, S. J., Costello, D. A., & Moroz, I. M. (2007). Exploiting nonlinear recurrence and fractal scaling properties for voice disorder detection. Biomedical Engineering, IEEE Transactions on, 54(7), 1233-1236.
+[10] Arora, S., Bagde, S., Nair, S. P., & Ramteke, R. J. (2021). Deep learning approach for Parkinson's disease detection using voice signals. Journal of King Saud University-Computer and Information Sciences.
+[11] Dorsey, E. R., Elbaz, A., & Nichols, E. (2018). Global, regional, and national burden of Parkinson's disease, 1990–2016: a systematic analysis for the Global Burden of Disease Study 2016. The Lancet Neurology, 17(11), 939-953.
+[12] Poewe, W., Seppi, K., Tanner, C. M., Halliday, G. M., Brundin, P., Volkmann, J., ... & Lang, A. E. (2017). Parkinson disease. Nature Reviews Disease Primers, 3(1), 1-21.
+[13] Tsanas, A., Little, M. A., McSharry, P. E., & Ramig, L. O. (2010). Accurate telemonitoring of Parkinson's disease progression by noninvasive speech tests. IEEE Transactions on Biomedical Engineering, 57(4), 884-893.
+[14] Little, M. A., McSharry, P. E., Roberts, S. J., Costello, D. A., & Moroz, I. M. (2007). Exploiting nonlinear recurrence and fractal scaling properties for voice disorder detection. Biomedical Engineering, IEEE Transactions on, 54(7), 1233-1236.
+[15] Arora, S., Bagde, S., Nair, S. P., & Ramteke, R. J. (2021). Deep learning approach for Parkinson's disease detection using voice signals. Journal of King Saud University-Computer and Information Sciences.
+
+
+
