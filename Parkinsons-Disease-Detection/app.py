@@ -1,12 +1,3 @@
-Act as ressearch paper writer...and write paper o "ysfyu" in IEEE format
-Refer the below project  c
-i need only these 3 sections:
-1. abstract
-2. Introduction
-3. Literature View
-
-Abstract:
-
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
