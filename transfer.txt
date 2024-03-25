@@ -1,0 +1,3 @@
+
+Dataset Balancing:
+This section addresses the considerable dataset imbalance, where Parkinson Disease samples account for 147 instances, while non-Parkinson samples are only 48. Therefore, we employ SMOTE in this section to oversample and achieve a balanced dataset.
