@@ -12,15 +12,31 @@ Evaluation of the constructed model is the primary and critical step that must b
 # 1.1. Evaluation Metrics
 
 Nevertheless, considering the genuine objective of the classifier and the comparative expenses related to incorrect positive and incorrect negative classifications, it becomes apparent that the significance of misclassifying into class J when the true class is class I can differ. This indicates that there are unequal consequences for misclassifications depending on the scenario, and it would be beneficial to evaluate a performance metric across multiple classifications to ascertain the overall effectiveness of the classifier and determine its most and least proficient classes.
+
+[5]
+[6]
+[7]
+[8]
 An optimal metric is one that exhibits a significant level of importance for classifiers that possess a low occurrence of false positives or false negatives. Elevated values of either sensitivity or specificity are advantageous in certain clinical or assurance testing scenarios, respectively. Metrics like the overall agreement or Youden's index (sensitivity + specificity - 1) could be suitable options.
+A good performance metric is one which is able to distinguish between the classes. Since this is a binary classification problem, it can be understood that the various different types of errors in the context of a decision regarding the class variable. For example, one can define a heart disease positive finding to be "1", and a negative finding to be "0". The true positive rate then is TP/TP+FN. The false positive rate is defined as FP/TN+FP. A powerful method of evaluating the performance of a classifier is by using a contingency table (actual class vs. predicted class) to calculate the precision, recall and hence F1 measure.
 
 # 1.2. Cross-Validation
 
-In this study, we used a stratified 5-fold cross-validation. Cross-validation is a resampling procedure used to evaluate machine learning models on a limited data sample. The procedure has a single parameter called k that refers to the number of groups that a given data sample is to be split into. In the basic approach, called k-fold CV, the learning algorithm is trained and tested k times, each time on a different subset of training data and testing on a different but corresponding subset of testing data. Cross-validation helps to establish the best model and at the same time test the model to check if it's not overfitting. In k-fold CV, the data is first partitioned into k equally (or nearly equally) sized subsamples. Of the k subsamples, a single subsample is retained as the testing data and the remaining k - 1 subsamples are used as training data. The cross-validation process is then repeated k times (the folds), with each of the k subsamples used exactly once as the validation data. The k results from the folds can then be averaged to produce a single estimation. The advantage of this method is that it simultaneously uses all the data for training and testing, and is a better way to test the model performance. We performed hyperparameter tuning for the learning algorithms decision tree, random forest, and gradient boosting. Since the dataset is small for hypertuning, we used a 10-fold cross-validation for comparing the performance
+In this study, we used a stratified 5-fold cross-validation. Cross-validation is a resampling procedure used to evaluate machine learning models on a limited data sample. The procedure has a single parameter called k that refers to the number of groups that a given data sample is to be split into. In the basic approach, called k-fold CV, the learning algorithm is trained and tested k times, each time on a different subset of training data and testing on a different but corresponding subset of testing data. Cross-validation helps to establish the best model and at the same time test the model to check if it's not overfitting. In k-fold CV, the data is first partitioned into k equally (or nearly equally) sized subsamples. Of the k subsamples, a single subsample is retained as the testing data and the remaining k - 1 subsamples are used as training data. The cross-validation process is then repeated k times (the folds), with each of the k subsamples used exactly once as the validation data. The k results from the folds can then be averaged to produce a single estimation. The advantage of this method is that it simultaneously uses all the data for training and testing, and is a better way to test the model performance. We performed hyperparameter tuning for the learning algorithms decision tree, random forest, and gradient boosting. Since the dataset is small for hypertuning, we used a 10-fold cross-validation for comparing the performance.
+
+[9]
+[10]
+[11]
+[12]
 
 # 1.3. Confusion Matrix Analysis
 
+1.3. Confusion Matrix Analysis
 The above two measures are very useful in cases where the cost of misclassification of positive and negative classes are different. For example, medical diagnostic tests where the cost of false negative is very high would require a test with high sensitivity, and a doctor would select the threshold probability of the test required as the point it achieved the desired sensitivity. High specificity would require a high threshold probability, and so on.
+
+[13]
+[14]
+[15]
 Specificity = TN / (TN+FP)
 Specificity is a measure of the proportion of actual negative cases which got predicted, i.e. the ability of the classifier to find all the negative instances. Specificity can be calculated using the following formula:
 Sensitivity = TP / (TP+FN)
