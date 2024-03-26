@@ -1,5 +1,5 @@
 Acts as a professional research paper write and write a research paper on "Heart Disease Detection Using Machine Learning".
-U only need to write these sections: Ensemling technique, results & conclusion, Future Directions
+U only need to write only these sections: Results & conclusion, Future Directions.
 
 Write in IEEE format. Mention refernces whenever required. Write in descriptive and lengthy manner.
 
