@@ -1,46 +1,7 @@
-# 1. Performance Evaluation
+Ensembling is a powerful machine learning technique that combines multiple individual models to produce a stronger predictive model. The fundamental idea behind ensembling is that by aggregating the predictions of multiple models, we can mitigate the weaknesses of individual models and leverage their strengths, ultimately leading to improved performance and robustness. In the context of heart disease detection using machine learning, ensembling plays a crucial role in enhancing the predictive accuracy and reliability of the detection system.
 
-Initially, we employed assessment metrics namely sensitivity, specificity, precision, and recall. Sensitivity pertains to the classifier's capacity to correctly identify the positive class, with a high score indicating a low type I error. Specificity, on the other hand, refers to the classifier's ability to accurately identify the negative class, with a high score indicating a low type II error. Precision measures the classifier's capability to avoid mislabeling a negative class as a positive class, where a high score indicates a low false positive rate. Recall represents the classifier's ability to detect all instances of the positive class, where a high score indicates a low false negative rate. Our objective is to attain high values for sensitivity, specificity, precision, and recall in order to ensure the precise prediction of positive and negative classes within heart disease data. While a high sensitivity is desirable for identifying patients with heart disease, a high false positive rate is undesirable as it could lead to misdiagnosing patients who do not actually have the condition. Consequently, it is imperative to also maintain a high degree of specificity to mitigate this possibility. Additionally, a high recall demonstrates that the model does not miss many patients with the positive class when making negative class predictions.
+In our heart disease detection system, we employ a hybrid ensembling technique that combines the predictions of three diverse machine learning models: Decision Tree, Random Forest, and K-Nearest Neighbors (KNN). This hybrid ensembling approach combines the strengths of Decision Tree, Random Forest, and KNN models to create a more robust and accurate heart disease detection system. First, each base model is trained independently on the training data, optimizing their respective parameters for maximal performance. Subsequently, the predictions of these models are aggregated using a simple averaging mechanism.
 
-[1]
-[2]
-[3]
-[4]
-It is imperative to acquire a comprehensive understanding of True Positive (TP), True Negative (TN), False Positive (FP), and False Negative (FN). These four variables serve as the criteria for evaluating the model's accuracy in classifying each category. Specifically, the positive class (1) represents the occurrence of heart disease, while the negative class (0) signifies the absence of heart disease.
-Evaluation of the constructed model is the primary and critical step that must be taken to ensure the quality of the model. In this research, we employed various performance evaluations to measure the quality of the constructed model.
+By combining the predictions of these models using a simple averaging mechanism, our hybrid ensembling approach leverages the collective intelligence of diverse models to enhance the accuracy and reliability of heart disease detection. By leveraging the diverse perspectives and learning capabilities of these individual models, our hybrid ensembling approach aims to mitigate the limitations of any single algorithm and produce more reliable predictions. This ensemble's output serves as a consensus decision, reducing the risk of misdiagnosis and improving patient outcomes.
 
-# 1.1. Evaluation Metrics
-
-Nevertheless, considering the genuine objective of the classifier and the comparative expenses related to incorrect positive and incorrect negative classifications, it becomes apparent that the significance of misclassifying into class J when the true class is class I can differ. This indicates that there are unequal consequences for misclassifications depending on the scenario, and it would be beneficial to evaluate a performance metric across multiple classifications to ascertain the overall effectiveness of the classifier and determine its most and least proficient classes.
-
-[5]
-[6]
-[7]
-[8]
-An optimal metric is one that exhibits a significant level of importance for classifiers that possess a low occurrence of false positives or false negatives. Elevated values of either sensitivity or specificity are advantageous in certain clinical or assurance testing scenarios, respectively. Metrics like the overall agreement or Youden's index (sensitivity + specificity - 1) could be suitable options.
-A good performance metric is one which is able to distinguish between the classes. Since this is a binary classification problem, it can be understood that the various different types of errors in the context of a decision regarding the class variable. For example, one can define a heart disease positive finding to be "1", and a negative finding to be "0". The true positive rate then is TP/TP+FN. The false positive rate is defined as FP/TN+FP. A powerful method of evaluating the performance of a classifier is by using a contingency table (actual class vs. predicted class) to calculate the precision, recall and hence F1 measure.
-
-# 1.2. Cross-Validation
-
-In this study, we used a stratified 5-fold cross-validation. Cross-validation is a resampling procedure used to evaluate machine learning models on a limited data sample. The procedure has a single parameter called k that refers to the number of groups that a given data sample is to be split into. In the basic approach, called k-fold CV, the learning algorithm is trained and tested k times, each time on a different subset of training data and testing on a different but corresponding subset of testing data. Cross-validation helps to establish the best model and at the same time test the model to check if it's not overfitting. In k-fold CV, the data is first partitioned into k equally (or nearly equally) sized subsamples. Of the k subsamples, a single subsample is retained as the testing data and the remaining k - 1 subsamples are used as training data. The cross-validation process is then repeated k times (the folds), with each of the k subsamples used exactly once as the validation data. The k results from the folds can then be averaged to produce a single estimation. The advantage of this method is that it simultaneously uses all the data for training and testing, and is a better way to test the model performance. We performed hyperparameter tuning for the learning algorithms decision tree, random forest, and gradient boosting. Since the dataset is small for hypertuning, we used a 10-fold cross-validation for comparing the performance.
-
-[9]
-[10]
-[11]
-[12]
-
-# 1.3. Confusion Matrix Analysis
-
-1.3. Confusion Matrix Analysis
-The above two measures are very useful in cases where the cost of misclassification of positive and negative classes are different. For example, medical diagnostic tests where the cost of false negative is very high would require a test with high sensitivity, and a doctor would select the threshold probability of the test required as the point it achieved the desired sensitivity. High specificity would require a high threshold probability, and so on.
-
-[13]
-[14]
-[15]
-Specificity = TN / (TN+FP)
-Specificity is a measure of the proportion of actual negative cases which got predicted, i.e. the ability of the classifier to find all the negative instances. Specificity can be calculated using the following formula:
-Sensitivity = TP / (TP+FN)
-From this matrix, we can calculate sensitivity and specificity. Sensitivity is a measure of the proportion of actual positive cases that got predicted, i.e. the ability of the classifier to find all the positive instances. Sensitivity can be calculated using the following formula:
-True Positives False Positives
-False Negatives True Negatives
-Confusion matrix is an N x N matrix, which is used to evaluate the performance of a classifier where N is the number of target classes. The matrix compares the actual target values with those predicted by the machine. Let's assume we have a binary classification A|B, and the following table is the Confusion Matrix for Predicted vs Actual Observation.
+Ensembling techniques offer a powerful strategy for enhancing the predictive performance of machine learning models in heart disease detection. By combining the predictions of diverse models such as Decision Tree, Random Forest, and KNN, we can create more robust and accurate detection systems. Our research demonstrates the effectiveness of hybrid ensembling in improving the reliability of heart disease diagnosis, ultimately leading to better patient outcomes.

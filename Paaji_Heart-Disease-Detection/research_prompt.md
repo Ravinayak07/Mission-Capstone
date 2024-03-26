@@ -1,10 +1,7 @@
 Acts as a professional research paper write and write a research paper on "Heart Disease Detection Using Machine Learning".
-U need to write these sections: Abstract, Keywords, introduction, Literature review, Proposed Methodology, Dataset Used, Data Preprocessing, Model training:
-Decision Tree, Random Forest, and K-Nearest Neighbors (KNN), performance evaluation, ensemling technique, results & conclusion, Future Directions
+U only need to write these sections: Ensemling technique, results & conclusion, Future Directions
 
 Write in IEEE format. Mention refernces whenever required. Write in descriptive and lengthy manner.
-
-The project includes data loading and exploration, preprocessing, model training, evaluation, and saving. It involves loading a heart disease dataset, exploring its characteristics and visualizing key features. Preprocessing steps include splitting the data, scaling features, and training machine learning models like Decision Tree, Random Forest, and K-Nearest Neighbors (KNN). Model performance is evaluated, and a Gaussian Naive Bayes model is saved using pickle for future use.
 
 Now just read the below code and understand it. Then i will tell you to write one section at a time. Don't Start writing until i ask you.
 
@@ -297,8 +294,8 @@ Y_pred_hybrid.append(round(pred_int)) # Append the rounded integer prediction to
 
 # Calculate accuracy for the hybrid model
 
-acc_hybrid = round(accuracy_score(Y_pred_hybrid, Y_test) _ 100, 2)
-acc_hybrid _= 1.12
+acc*hybrid = round(accuracy_score(Y_pred_hybrid, Y_test) * 100, 2)
+acc*hybrid *= 1.12
 acc_hybrid = round(acc_hybrid, 2)
 
 # Print the maximum accuracy for the hybrid model
