@@ -1,28 +1,63 @@
-# DEADLINE OVERVIEW
-1. Friday   11pm   : Parkinos : Paper, Web App
-2. Saturday 9pm    : Chatbot  : Web app UI , Model code correction
-3. Saturday 10pm   : Samu     : Paper, Model code 
-4. Sunday   10pm   : Nikhil   : Paper, slight UI change
-5. Sunday   9pm    : Paaji    : Paper
-6. Sunday   11pm   : Event Registration :  Weekly Update
+SAMU:
+- Web App done
+- Update ipynb file
+- Paper Pending
+- Feb 18 - Mar 18
+- Amount pedning : 7k
 
-# WORK DISTRIBUTION:
-1. Ravi    : [Parkinson paper, Web App], [Samu Paper, Model Code], [Nikhil Paper, UI Change] , [Paaji Paper], [Event Registration]
+NIKHIL YADAV:
+- Web App Update
+- ipynb Done
+- Paper pending
+- Feb 20 - Mar 15 
+- Deadline : Mar 30 (Saturday)
+- Amount Pending : 8k
 
-2. Adarsh  : [Parkinson paper], [Chatbot  : Web app UI , Model code correction], [Samu Paper, Model Code], [Nikhil Paper] , [Paaji Paper]
+CHATBOT
+- Web App Upadte
+- ipynb Done
+- Feb 28 - Mar 16
+- Deadline : Mar 28 (Thrusday)
+- Amount Pending : 6k
 
-3. Ansuman : [Parkinson paper], [Samu Paper, Model Code], [Nikhil Paper] , [Paaji Paper]
+PAAJI:
+- Web App DONE
+- ipynb DONE
+- Paper DONE
+- Mar 4 - Mar 21
+- Amount Pending : 0
 
-# PAPER SECTIONS:
-1. Anshuman : Abstract, Introduction, Literature Review
-2. Adarsh   : Proposed Methodology, Dataset, Data Preprocessing
-3. Ravi     : Model Training, Results & Conclusion, References
+EVENT REGISTRATION:
+- Web App Update
+- Mar 5 - April 5
+- Amount Pending : 5k
 
-# PAPER:
+PARKINSONS:
+- Web App Update
+- ipynb DONE
+- Paper DONE
+- Mar 6 - Mar 20
+- Amount Pending : 9k
 
-- Parkinsons : 25th (Mon)
-- Paaji : 25th (Mon)
-- Nikhil Yadav :
+BOOK BUDDY:
+- ipynb pending
+- web app pending
+- paper pending
+- mar 22 - mar 27 - mar 31
+- Amount Pendig : 9k
+
+STABLE DIFFUSION:
+- ipynb pending
+- web app pending
+- paper pending
+- mar 22 - mar 27 - mar 31
+- Amount Pendig : 9k
+
+FAKE ACCOUNT DETECTION:
+- ipynb pending
+- web app pending
+- mar 25 - apr 15
+- Amount Pendig : 6k
 
 # PROMPTS:
 
