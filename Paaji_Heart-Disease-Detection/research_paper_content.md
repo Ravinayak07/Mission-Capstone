@@ -1,25 +1,23 @@
-# Results & Conclusion
+Cohen, J. F. (1960). "A Coefficient of Agreement for Nominal Scales," Educational and Psychological Measurement, vol. 20, no. 1, pp. 37-46.
 
-In this study, we developed a heart disease detection system using machine learning techniques. The dataset comprised various attributes related to heart health, including age, sex, chest pain type, blood pressure, cholesterol levels, and other relevant factors. We explored the dataset, visualized the distributions of different features, and performed preprocessing steps to prepare the data for model training.
+Powers, D. M. (2011). "Evaluation: From Precision, Recall and F-Factor to ROC, Informedness, Markedness & Correlation," Journal of Machine Learning Technologies, vol. 2, no. 1, pp. 37-46.
 
-Three machine learning models were trained, optimized, and evaluated for heart disease detection: Decision Tree, Random Forest, and K-Nearest Neighbors (KNN). Additionally, a hybrid ensemble model combining the predictions of these models was created to enhance predictive performance.
+Rajaraman, A., & Ullman, J. D. (2011). "Mining of Massive Datasets," Cambridge University Press.
 
-The results of our experiments indicate varying levels of accuracy for different models. The Decision Tree model achieved a moderate accuracy of approximately 63%, while the Random Forest model outperformed it significantly, achieving an accuracy of around 90%. The KNN model demonstrated competitive performance with an accuracy of approximately 81%.
+Liu, B. (2012). "Sentiment Analysis and Opinion Mining," Synthesis Lectures on Human Language Technologies, vol. 5, no. 1, pp. 1-167.
 
-However, the most notable improvement in accuracy was observed with the hybrid ensemble model, which combined the predictions of Decision Tree, Random Forest, and KNN. The hybrid model achieved the highest accuracy of approximately 96%, surpassing the individual models' performance. This result underscores the effectiveness of ensemble techniques in improving predictive accuracy and robustness.
+Hastie, T., Tibshirani, R., & Friedman, J. (2009). "The Elements of Statistical Learning: Data Mining, Inference, and Prediction," 2nd ed., Springer Science & Business Media.
 
-# Future Directions
+Breiman, L. (2001). "Random Forests," Machine Learning, vol. 45, no. 1, pp. 5-32.
 
-While our study has yielded promising results, there are several avenues for future research and improvement in heart disease detection using machine learning:
+Liaw, A., & Wiener, M. (2002). "Classification and Regression by randomForest," R News, vol. 2, no. 3, pp. 18-22.
 
-- 1. Integration with Electronic Health Records (EHR): Future research could explore integrating machine learning models with electronic health records to leverage additional patient information, such as medical history, medications, and comorbidities, for more accurate predictions.
+Altman, N. S. (1992). "An Introduction to Kernel and Nearest-Neighbor Nonparametric Regression," The American Statistician, vol. 46, no. 3, pp. 175-185.
 
-- 2. Exploration of Advanced Feature Engineering Techniques: Investigating advanced feature engineering techniques, such as feature selection, dimensionality reduction, and feature transformation, could further enhance the predictive performance of machine learning models in heart disease detection.
+Cover, T., & Hart, P. (1967). "Nearest Neighbor Pattern Classification," IEEE Transactions on Information Theory, vol. 13, no. 1, pp. 21-27.
 
-- 3. Deployment in Clinical Settings: Conducting prospective studies to evaluate the real-world performance of machine learning-based diagnostic systems in clinical settings is essential for assessing their clinical utility, usability, and impact on patient outcomes.
+Duda, R. O., Hart, P. E., & Stork, D. G. (2001). "Pattern Classification," 2nd ed., Wiley-Interscience.
 
-- 4. Interpretability and Explainability: Enhancing the interpretability and explainability of machine learning models is crucial for gaining trust and acceptance from healthcare professionals. Future research should focus on developing interpretable models and visualizations to provide insights into model predictions.
+Friedman, J. H. (2001). "Greedy Function Approximation: A Gradient Boosting Machine," The Annals of Statistics, vol. 29, no. 5, pp. 1189-1232.
 
-- 5. Personalized Medicine: Tailoring machine learning models to individual patient characteristics and risk factors could improve the accuracy of heart disease detection and enable personalized treatment strategies.
-
-Overall, continued research and innovation in machine learning techniques for heart disease detection hold immense potential for advancing healthcare and improving patient outcomes. Collaboration between data scientists, healthcare providers, and policymakers is essential for translating these advancements into clinical practice effectively.
+Zhang, J., & Mani, I. (2003). "KNN Approach to Unbalanced Data Distributions: A Case Study Involving Information Extraction," in Proceedings of the Workshop on Learning from Imbalanced Datasets II, Washington, DC, USA, Aug. 2003, pp. 1-8.
