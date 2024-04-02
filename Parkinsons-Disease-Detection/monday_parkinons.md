@@ -151,3 +151,11 @@ Subsequently, various machine learning algorithms, including Logistic Regression
   interpretable machine learning models for Parkinson's
   disease detection, ultimately improving early diagnosis
   and treatment outcomes for patients
+
+# Dataset
+
+The dataset utilized in this study for Parkinson's Disease detection using machine learning algorithms is sourced from the UCI Machine Learning Repository [1]. This dataset comprises various attributes extracted from voice recordings of subjects, including measures related to vocal fundamental frequency, variation in frequency and amplitude, noise-to-harmonics ratio, nonlinear dynamical complexity, and other nonlinear measures of fundamental frequency variation. Each data entry is associated with a unique ASCII subject name and recording number. The dataset contains a binary classification target variable indicating the health status of the subjects, where '1' denotes individuals diagnosed with Parkinson's disease and '0' represents healthy individuals.
+
+References
+
+[1] M. A. Little, P. E. McSharry, S. J. Roberts, D. A. E. Costello, and I. M. Moroz, "Exploiting Nonlinear Recurrence and Fractal Scaling Properties for Voice Disorder Detection," BioMedical Engineering OnLine, vol. 6, no. 23, June 26, 2007. [Online]. Available: https://archive.ics.uci.edu/ml/machine-learning-databases/parkinsons/
