@@ -28,7 +28,10 @@ Keywords: Recommendation Systems, Collaborative Filtering, Content-Based Filteri
 
 # References:
 
-Singh, A., Kumar, V., & Gupta, P. (2019). Matrix factorization based collaborative filtering for book recommendation. International Journal of Information Technology, 11(2), 265-273.
-Li, S., Zhang, L., & Wu, L. (2020). Neighborhood-based collaborative filtering for book recommendation. Journal of Computer Science and Technology, 15(4), 589-598.
-Hu, J., Chen, Z., & Wang, Y. (2018). Content-based recommendation system for books using textual features. Journal of Information Science, 25(3), 401-412.
-Zhang, H., Wang, X., & Liu, Y. (2021). Semantic-based book recommendation using natural language processing techniques. Journal of Intelligent Systems, 32(1), 123-135.
+[1] Singh, A., Kumar, V., & Gupta, P. (2019). Matrix factorization based collaborative filtering for book recommendation. International Journal of Information Technology, 11(2), 265-273.
+
+[2] Li, S., Zhang, L., & Wu, L. (2020). Neighborhood-based collaborative filtering for book recommendation. Journal of Computer Science and Technology, 15(4), 589-598.
+
+[3] Hu, J., Chen, Z., & Wang, Y. (2018). Content-based recommendation system for books using textual features. Journal of Information Science, 25(3), 401-412.
+
+[4] Zhang, H., Wang, X., & Liu, Y. (2021). Semantic-based book recommendation using natural language processing techniques. Journal of Intelligent Systems, 32(1), 123-135.
