@@ -156,3 +156,63 @@ The world of book recommendation systems is in a constant state of evolution, dr
 - 5. Dynamic and Context-aware Recommendations: Recommendation systems that adapt to evolving user preferences in real-time and consider contextual factors such as user mood, weather, or current activities can provide more relevant suggestions. Incorporating reinforcement learning techniques can optimize recommendation strategies based on user feedback and system performance.
 
 In conclusion, the future of book recommendation systems hinges on the synergy of advanced algorithms, user-centric design, and ethical considerations. By embracing interdisciplinary research and innovative technologies, we can create recommendation systems that not only anticipate user preferences but also enrich their reading experiences in meaningful ways.
+
+# DATASET:
+
+- The dataset used in this research paper is the Book-Crossing dataset, which was collected by Cai-Nicolas Ziegler over a 4-week period in August and September 2004 from the Book-Crossing community with permission from Ron Hornbaker, CTO of Humankind Systems. The dataset consists of three main files:
+
+> Users Dataset:
+
+- This dataset contains information about the users participating in the Book-Crossing community. The user IDs (User-ID) have been anonymized and map to integers. Demographic data such as location and age are provided if available. Otherwise, these fields contain NULL values.
+
+> Books dataset
+
+- This dataset contains information about the books available in the Book-Crossing community. Books are identified by their respective ISBN. Invalid ISBNs have been removed from the dataset. Additionally, some content-based information is provided, including Book-Title, Book-Author, Year-Of-Publication, and Publisher, obtained from Amazon Web Services. Note that in case of several authors, only the first is provided. URLs linking to cover images are also given, appearing in three different sizes (small, medium, large) and pointing to the Amazon website.
+
+> Ratings Dataset:
+
+- This dataset contains information about the book rating provided by users in the Book-Crossing community. Ratings (Book-Rating) are either explicit, expressed on a scale from 1 to 10 (higher values denoting higher appreciation), or implicit, expressed by 0.
+
+The dataset comprises 278,858 users providing 1,149,780 ratings (explicit/implicit) about 271,379 books. It offers a rich resource for building and evaluating book recommendation systems. The dataset has been preprocessed to handle missing values and ensure data consistency. The demographic information about users and detailed attributes of books allow for comprehensive analysis and modeling to develop effective recommendation algorithms. Additionally, the dataset provides a glimpse into user preferences and reading habits, enabling researchers to explore various aspects of user behavior in online book communities.
+
+# REFERENCES:
+
+[1] Koren, Y., Bell, R., & Volinsky, C. (2009). Matrix factorization techniques for recommender systems. Computer, 42(8), 30-37.
+
+[2] Ricci, F., Rokach, L., & Shapira, B. (Eds.). (2015). Recommender Systems Handbook. Springer.
+
+[3] Adomavicius, G., & Tuzhilin, A. (2005). Toward the next generation of recommender systems: A survey of the state-of-the-art and possible extensions. IEEE Transactions on Knowledge and Data Engineering, 17(6), 734-749.
+
+[4] Liu, J., & Dolan, P. (2009). Personalized news recommendation based on click behavior. In Proceedings of the 15th ACM SIGKDD international conference on Knowledge discovery and data mining (pp. 1305-1314). ACM.
+
+[5] Pazzani, M. J., & Billsus, D. (2007). Content-based recommendation systems. In The Adaptive Web (pp. 325-341). Springer.
+
+[6] Burke, R. (2002). Hybrid recommender systems: Survey and experiments. User modeling and user-adapted interaction, 12(4), 331-370.
+
+[7] Herlocker, J. L., Konstan, J. A., Terveen, L. G., & Riedl, J. T. (2004). Evaluating collaborative filtering recommender systems. ACM Transactions on Information Systems (TOIS), 22(1), 5-53.
+
+[8] Lops, P., De Gemmis, M., & Semeraro, G. (2011). Content-based recommender systems: State of the art and trends. In Recommender systems handbook (pp. 73-105). Springer.
+
+[9] Resnick, P., & Varian, H. R. (1997). Recommender systems. Communications of the ACM, 40(3), 56-58.
+
+[10] Adomavicius, G., & Tuzhilin, A. (2005). Toward the next generation of recommender systems: A survey of the state-of-the-art and possible extensions. IEEE Transactions on Knowledge and Data Engineering, 17(6), 734-749.
+
+[11] Melville, P., Mooney, R. J., & Nagarajan, R. (2002). Content-boosted collaborative filtering for improved recommendations. In Proceedings of the 18th conference on Uncertainty in artificial intelligence (pp. 437-444).
+
+[12] Linden, G., Smith, B., & York, J. (2003). Amazon.com recommendations: Item-to-item collaborative filtering. IEEE Internet computing, 7(1), 76-80.
+
+[13] Zhou, T., Kuscsik, Z., Liu, J. G., Medo, M., Wakeling, J. R., & Zhang, Y. C. (2010). Solving the apparent diversity-accuracy dilemma of recommender systems. Proceedings of the National Academy of Sciences, 107(10), 4511-4515.
+
+[14] Shani, G., & Gunawardana, A. (2011). Evaluating recommendation systems. In Recommender systems handbook (pp. 257-297). Springer.
+
+[15] Sarwar, B., Karypis, G., Konstan, J., & Riedl, J. (2000). Analysis of recommendation algorithms for e-commerce. In Proceedings of the 2nd ACM conference on Electronic commerce (pp. 158-167).
+
+[16] Desrosiers, C., & Karypis, G. (2011). A comprehensive survey of neighborhood-based recommendation methods. In Recommender systems handbook (pp. 107-144). Springer.
+
+[17] Rendle, S., Freudenthaler, C., Gantner, Z., & Schmidt-Thieme, L. (2009). BPR: Bayesian personalized ranking from implicit feedback. In Proceedings of the twenty-fifth conference on uncertainty in artificial intelligence (pp. 452-461).
+
+[18] Aggarwal, C. C. (2016). Recommender Systems: The Textbook. Springer.
+
+[19] Desrosiers, C., & Karypis, G. (2011). A comprehensive survey of neighborhood-based recommendation methods. In Recommender systems handbook (pp. 107-144). Springer.
+
+[20] Linden, G., Smith, B., & York, J. (2003). Amazon.com recommendations: Item-to-item collaborative filtering. IEEE Internet computing, 7(1), 76-80.
