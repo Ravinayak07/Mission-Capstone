@@ -104,3 +104,27 @@ Sparse Pivot Table Format:
 The raw data was transformed into a sparse pivot table format suitable for collaborative filtering, a popular recommendation system technique.
 Additionally, smoothing functions were applied to ratings to mitigate noise and enhance the stability of the recommendation system.
 Matrix factorization techniques, such as Singular Value Decomposition (SVD), were employed to decompose the rating matrix and extract latent factors underlying user preferences, facilitating model-based collaborative filtering.
+
+# MODEL TRAINING:
+
+- In the landscape of recommendation systems, Singular Value Decomposition (SVD) stands out as a pivotal matrix factorization technique. Its widespread adoption owes to its profound effectiveness in capturing intricate patterns within data. At its core, SVD disassembles a matrix into three distinct matrices, each contributing to the approximation of the original matrix. Specifically tailored for recommendation systems, SVD partitions the user-item interaction matrix into two latent feature matrices representing users and items. This decomposition process unveils hidden relationships and patterns, empowering the system to make more precise predictions about user preferences.
+
+> Filtering the Number of Books and Users:
+
+Before embarking on the SVD journey with our dataset, it's paramount to sift through the data and weed out books and users that might not significantly contribute to the recommendation process. This preparatory step serves dual objectives: bolstering recommendation quality and optimizing computational efficiency. We undertake a meticulous curation process, filtering out books with scanty reviews, ensuring that only those with a substantial number of ratings (typically, five or more reviews) remain. Similarly, users who have provided feedback on a limited number of books (e.g., fewer than five) are omitted from the dataset. These filters act as guardians, ensuring that the dataset furnishes ample information for the model to discern meaningful patterns while mitigating noise and sparsity.
+
+> Matrix Factorization:
+
+Having preprocessed and sieved through the dataset, the subsequent stride entails matrix factorization through the SVD methodology. This intricate process involves decomposing the user-item interaction matrix into three constituent matrices: U (user features), Σ (singular values), and V^T (item features). The determination of the number of latent factors (often symbolized as k) emerges as a pivotal hyperparameter, demanding careful calibration to strike a balance between model complexity and performance. Through meticulous tuning of k, we endeavor to encapsulate the most pertinent latent features characterizing user preferences and item attributes. Matrix factorization serves as a conduit to represent users and items in a reduced-dimensional space, ushering in heightened computational efficiency and interpretability of recommendations.
+
+> Generating Predictions:
+
+Post the matrix factorization odyssey, we embark on the journey of matrix reconstruction by leveraging the decomposed matrices. The resultant matrix furnishes predicted ratings for all conceivable user-item pairs, offering insights into the likelihood of a user engaging with a specific item. These prognosticated ratings lay the groundwork for crafting personalized recommendations tailored to individual users. By harnessing the reconstructed matrix, the system adeptly discerns items closely aligning with a user's inclinations, thereby elevating the overall user experience and satisfaction quotient.
+
+> Collaborative Filtering Recommender Class:
+
+In a bid to streamline the recommendation generation pipeline, we encapsulate the entire gamut of functionality within a dedicated Collaborative Filtering Recommender class. This class serves as a unified gateway for interacting with the recommendation system, assimilating the predicted ratings matrix as input and furnishing methods to proffer personalized recommendations grounded on user preferences. This encapsulation fosters code reusability, bolstering the system's maintainability and scalability. Furthermore, this abstraction stratum paves the way for seamless integration of the recommendation system across diverse applications and environments, augmenting its adaptability and user-friendliness.
+
+> Model Evaluation:
+
+To gauge the efficacy of our collaborative filtering model, we deploy a robust battery of evaluation metrics, encompassing Recall@5 and Recall@10 among others. These metrics serve as litmus tests, quantifying the system's proficiency in recommending pertinent items that users have interacted with in the test dataset. Recall@k, in particular, offers insights into the system's recall-centric performance, delineating the proportion of relevant items successfully recommended within the top k positions. Through meticulous scrutiny across diverse metrics, we glean a holistic comprehension of the model's strengths and weaknesses, empowering us to fine-tune parameters and optimize performance to unprecedented heights.
