@@ -1,0 +1,14 @@
+	
+precision	
+recall	f1 score	
+support
+0	0.92	0.92	0.92	12
+1	0.98	0.98	0.98	47
+accuracy	          0.97	     0.97	0.97	59
+macro avg	0.95	0.95	0.95	59
+weighted
+avg	
+0.97	
+0.97	
+0.97	
+59
