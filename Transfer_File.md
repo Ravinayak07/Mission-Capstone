@@ -1,1 +1,5 @@
-- Agastaya Sharma, Ayushyashvats, hardik_836, Jayant Pranjal, Kanhaiya Krishna Gupta, Pranav Ajit Nair, Shrey Gupta 2002, and Shubham Jain. Stock Market Prediction and Sentimental Analysis. https://kaggle.com/competitions/stock-market-prediction-and-sentimental-analysis, 2024. Kaggle.
+- In the upcoming year, I aim to enhance my technical expertise in cloud services and software development by deepening my knowledge of Azure technologies, focusing on advanced deployment strategies, resource optimization, and security best practices. I plan to achieve this through relevant certifications and specialized training courses.
+
+- Additionally, I will focus on improving customer support and client satisfaction by proactively identifying and resolving technical issues, ensuring smooth deployment processes, and providing timely solutions to client concerns. My goal is to enhance communication with clients, understand their pain points, and offer effective solutions that align with their business objectives.
+
+- Furthermore, I aim to take a leadership role in at least one major project, collaborating with cross-functional teams to drive innovation, improve service delivery, and streamline operations. By doing so, I intend to contribute to both customer success and overall business growth."
