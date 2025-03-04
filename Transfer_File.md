@@ -1,2 +1,1 @@
-- [9] Jeong, S., & Kim, B. (2021). "Improving stock price prediction using deep Q-networks." Expert Systems with Applications, vol. 163, p. 113766.
-- [10] Voigt, M., Lin, J., & Posch, D. (2022). "Scalable deep learning for time-series forecasting in cloud environments." Proc. IEEE Cloud Computing Conf., pp. 201-208.
+- Agastaya Sharma, Ayushyashvats, hardik_836, Jayant Pranjal, Kanhaiya Krishna Gupta, Pranav Ajit Nair, Shrey Gupta 2002, and Shubham Jain. Stock Market Prediction and Sentimental Analysis. https://kaggle.com/competitions/stock-market-prediction-and-sentimental-analysis, 2024. Kaggle.
