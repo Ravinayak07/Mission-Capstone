@@ -1,3 +1,2 @@
-# Data set
-- The dataset used in this study consists of two key components: historical stock price data and Twitter sentiment data. The stock market data was sourced from Yahoo Finance, covering a time span from January 2015 to December 2023 for multiple stock indices, including SENSEX, NASDAQ, and NIFTY50. The dataset contains daily records of key financial indicators: Open, High, Low, Close, Adjusted Close, and Volume.
-The sentiment dataset was collected using Twitter API (Tweepy) and filtered for stock-related keywords such as "market trends," "stock up/down," and specific company names. The collected data was then analyzed using VADER Sentiment Analysis to classify tweets as positive, neutral, or negative. A total of 500,000 tweets were analyzed over a 5-year period.
+- [9] Jeong, S., & Kim, B. (2021). "Improving stock price prediction using deep Q-networks." Expert Systems with Applications, vol. 163, p. 113766.
+- [10] Voigt, M., Lin, J., & Posch, D. (2022). "Scalable deep learning for time-series forecasting in cloud environments." Proc. IEEE Cloud Computing Conf., pp. 201-208.
