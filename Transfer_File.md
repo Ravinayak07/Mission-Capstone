@@ -1,10 +1,1 @@
-Subject: Submission of Annual Appraisal Goals
-
-Dear Ravi Chandra,
-
-I have completed and submitted my annual appraisal goals for your review. My focus this year is on enhancing my technical expertise in Azure cloud services, improving deployment strategies, and optimizing customer support by proactively resolving client issues. Additionally, I aim to take on a leadership role in key projects to drive innovation and efficiency.
-
-Please let me know if you have any feedback or suggestions for refinement. Looking forward to your guidance.
-
-Best regards,
-[Your Name]
+The dataset used in this study consists of two key components: historical stock price data and Twitter sentiment data. The stock market data was sourced from Yahoo Finance, covering a time span from January 2015 to December 2023 for multiple stock indices, including SENSEX, NASDAQ, and NIFTY50. The dataset contains daily records of key financial indicators: Open, High, Low, Close, Adjusted Close, and Volume. The sentiment dataset was collected using Twitter API (Tweepy) and filtered for stock-related keywords such as "market trends," "stock up/down," and specific company names. The data collected was then analyzed using VADER Sentiment Analysis to classify tweets as positive, neutral, or negative. A total of 500,000 tweets were analyzed over a 5-year period [7].
