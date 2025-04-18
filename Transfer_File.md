@@ -1,2 +1,9 @@
-Future studies on Voice Activity Detection (VAD) could focus on incorporating advanced deep learning methods, such as transformer-based models, which have demonstrated exceptional results in handling sequential data. Another promising direction is self-supervised learning, which has the potential to reduce reliance on large labeled datasets by making use of unlabeled audio data. To make the models more robust, expanding the dataset to include a broader variety of real-world noise environments would be beneficial. Additionally, optimizing models for edge devices using techniques like model compression and quantization will be important for real-time applications. Lastly, combining audio data with other types of inputs, such as video or contextual information, could significantly improve VAD accuracy, especially in noisy settings.
+I hope this message finds you well.
 
+I am writing to request leave from May 26th to June 13th (15 working days) for my upcoming marriage. I would be grateful if you could approve this leave period.
+
+Additionally, I kindly request your permission to work from home until July 31st. This arrangement would greatly assist me in spending quality time with my new family and adjusting to the new changes in my life.
+
+Please rest assured that I will be available to assist with any urgent matters during this period.
+
+I appreciate your understanding and consideration of my requests. Thank you in advance for your support.
