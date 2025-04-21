@@ -38,6 +38,20 @@
 - ADD IMAGE
 - The system architecture of the Intelligent Knowledge Assistant shows in Fig. 3 the end-to--end workflow whereby user inquiries pass through the NLU and RAG pipeline to retrieve and assemble context-rich responses from both vector and enterprise databases
 
+# System Architecture / Technical Design
+- The Intelligent Enterprise Knowledge Assistant's system architecture is meant to be modular, scalable, and flawless in interaction with current corporate infrastructure. Its components are layered and together control natural language understanding, contextual retrieval, response generation, and secure access control. Every module interacts asynchronously to maximize latency and guarantee constant performance in highly busy query settings.
+  
+- At the entry point sits the Natural Language Understanding (NLU) Module, which breaks out and interprets user inputs. It tokens the input text, sorts query types, compiles entities and intents. Sent this information, the query processor determines whether the search calls for structured data search, document-based retrieval, or both. Depending on this classification, the processor generates appropriate prompts and retrieval requests.
+
+- The intelligence central of the system is the Retrieval-Augmented Generation (RAG) Engine. It employs two parallel systems: a Structured Query Module that gathers tabular or real-time data from Enterprise Databases systems including SQL, ERP, or CRM systems; a Vector Search Pipeline that retrieves semantically similar papers using embeddings from the Vector Database. Even in cases when the query phrasing differs greatly from document language, the embedding model—sentence-BERT or OpenAI embeddings—ensures meaningful context retrieval.
+
+- Once both kinds of data are obtained, the Context Assembly Module organizes the material into a logical framework, fixes inconsistencies, and removes duplicity. The Response Generator receives this assembled context and generates a fluent and accurate response using a finely tuned LLM—e.g., GPT-based model. When relevant, the response includes supporting data and references; it may also be returned with source metadata to increase traceability and user confidence.
+
+- Security and compliance are enforced by the Access Control and Logging Framework, which validates user roles, restricts access to sensitive content, and maintains audit trails. Additional features such as token expiration, multi-factor authentication, and end-to-end encryption can be integrated depending on organizational requirements. The overall design supports containerized deployment (e.g., via Docker or Kubernetes), enabling horizontal scaling, continuous updates, and fault-tolerant performance.
+
+# Implementation Details:
+- 
+
 # References:
 - [1] J. Singh and R. Raina, "Enterprise Search Challenges in Big Data Era," International Journal of Data Analytics, vol. 6, no. 2, pp. 45–53, 2020.
 - [2] T. Brown et al., "Language Models are Few-Shot Learners," Advances in Neural Information Processing Systems, vol. 33, pp. 1877–1901, 2020.
