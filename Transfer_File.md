@@ -50,7 +50,41 @@
 - Security and compliance are enforced by the Access Control and Logging Framework, which validates user roles, restricts access to sensitive content, and maintains audit trails. Additional features such as token expiration, multi-factor authentication, and end-to-end encryption can be integrated depending on organizational requirements. The overall design supports containerized deployment (e.g., via Docker or Kubernetes), enabling horizontal scaling, continuous updates, and fault-tolerant performance.
 
 # Implementation Details:
-- 
+- Open-source technologies mixed with scalable cloud-native solutions enable the Intelligent Enterprise Knowledge Assistant to be implemented. The system is defined in three main layers: the 
+application interface, the intelligent query engine, and the data 
+model. This modular approach guarantees deployment flexibility, simplicity of maintenance, and 
+extensibility for next developments.
+
+- Developing the front-end interface, Python-based frameworks such as Flask or Streamlit let users 
+enter searches in natural language and get organised responses in real time. The interface consists in 
+part user authentication modules and logging panels tracking query activity and access levels. The 
+layer of communication between consumers and the processing engine, rest APIs, securely forward 
+interaction data to the back end.
+
+- Retrieval-Augmented Generation (RAG) is combined by intelligent back-end engine using 
+pretrained LLMs such GPT-3.5 via OpenAI's API or open-source alternatives like HuggingFace 
+Transformers. Storing dense embeddings created by Sentence-BERT or OpenAI using Pinecone or 
+FAISS (Facebook AI Similarity Search) as the vector database, the system Every incoming query lives 
+in the same vector space; the most relevant papers are found by a top-k similarity search. 
+SQLAlchemy or custom ORM connectors allow one to simultaneously acquire structured data from 
+relational databases such as MySQL or Postgres.
+
+- Retracted context—both unstructured and ordered—is compiled and included into a prompt 
+template to create a response. Then the language model gets this cue to generate a cogent, 
+grammatically accurate, factually accurate response. Programmatic text formatting tools called Jinja2 
+allow dynamically created prompt templates. Included also are reference metadata and confidence 
+ratings so the user may follow the information source. 
+
+- Security mechanisms are combined using role-based access control (RBAC) and API-level 
+authentication systems including JWT tokens and OAuth2 standards. Additionally defining the 
+databases or searches each account may access are user-level rights. Logs are kept either lightweight 
+alternatives or ELK stack (Elasticsearch, Logstash, Kibana) to ensure total traceability and support 
+auditing needs.
+
+- housed in a Dockerized environment and driven for scalability by Kubernetes. 
+Jenkins or GitHub events generate CI/CD pipelines for automaton of deployment, testing, and 
+integration. Among the cloud systems fit for usage in services, AWS—also known as Azure—
+ guarantees elastic resource allocation, excellent availability, and redundancy. 
 
 # References:
 - [1] J. Singh and R. Raina, "Enterprise Search Challenges in Big Data Era," International Journal of Data Analytics, vol. 6, no. 2, pp. 45–53, 2020.
