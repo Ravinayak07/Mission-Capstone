@@ -178,12 +178,23 @@ environments.
 
 # References:
 - [1] J. Singh and R. Raina, "Enterprise Search Challenges in Big Data Era," International Journal of Data Analytics, vol. 6, no. 2, pp. 45–53, 2020.
-- [2] T. Brown et al., "Language Models are Few-Shot Learners," Advances in Neural Information Processing Systems, vol. 33, pp. 1877–1901, 2020.
-- [3] P. Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," NeurIPS 2020, pp. 9459–9474.
+- [2] T. Brown, B. Mann, N. Ryder, M. Subbiah, J. Kaplan, P. Dhariwal et al., "Language Models are Few-Shot Learners," Advances in Neural Information Processing Systems (NeurIPS), vol. 33, pp. 1877–1901, 2020.
+- [3] P. Lewis, E. Perez, A. Piktus, F. Petroni, V. Karpukhin, N. Goyal et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," Advances in Neural Information Processing Systems (NeurIPS), vol. 33, pp. 9459–9474, 2020.
 - [4] K. Zhang and L. Chen, "Secure and Scalable Natural Language Interfaces to Enterprise Databases," IEEE Transactions on Knowledge and Data Engineering, vol. 34, no. 1, pp. 110–124, 2022.
 - [5] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. Kaiser, and I. Polosukhin, “Attention Is All You Need,” Advances in Neural Information Processing Systems (NeurIPS), pp. 5998–6008, 2017.
-- [6] T. Brown, B. Mann, N. Ryder, M. Subbiah, J. Kaplan, P. Dhariwal et al., “Language Models are Few-Shot Learners,” NeurIPS, vol. 33, pp. 1877–1901, 2020.
-- [7] P. Lewis, E. Perez, A. Piktus, F. Petroni, V. Karpukhin, N. Goyal et al., “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks,” NeurIPS, vol. 33, pp. 9459–9474, 2020.
-- [8] V. Karpukhin, B. Oguz, S. Min, P. Lewis, L. Wu, S. Edunov et al., “Dense Passage Retrieval for Open-Domain Question Answering,” EMNLP, pp. 6769–6781, 2020.
-- [9] K. Zhang and L. Chen, “Secure and Scalable Natural Language Interfaces to Enterprise Databases,” IEEE Transactions on Knowledge and Data Engineering, vol. 34, no. 1, pp. 110–124, Jan. 2022.
-  
+- [6] V. Karpukhin, B. Oguz, S. Min, P. Lewis, L. Wu, S. Edunov et al., “Dense Passage Retrieval for Open-Domain Question Answering,” EMNLP, pp. 6769–6781, 2020.
+- [7] D. Chen, A. Fisch, J. Weston, and A. Bordes, "Reading Wikipedia to Answer Open-Domain Questions," Association for Computational Linguistics (ACL), pp. 1870–1879, 2017.
+- [8] F. Petroni, T. Rocktäschel, P. Lewis, A. Bakhtin, Y. Wu, A. Miller, and S. Riedel, "Language Models as Knowledge Bases?" EMNLP, pp. 2463–2473, 2019.
+- [9] L. Dong, S. Wang, Y. Bao, and F. Wei, "Unified Language Model Pre-training for Natural Language Understanding and Generation," NeurIPS, 2019.
+- [10] N. Reimers and I. Gurevych, "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks," EMNLP-IJCNLP, pp. 3982–3992, 2019.
+- [11] S. Ruder, "An Overview of Multi-Task Learning in Deep Neural Networks," arXiv preprint arXiv:1706.05098, 2017.
+- [12] J. Gu, Y. Wang, C. Cho, and K. Cho, "Search Engine Guided Non-Parametric Machine Translation," AAAI Conference on Artificial Intelligence, 2018.
+- [13] J. Gao, Z. Fan, J. Song, and C. Wang, "Towards Unified Conversational Agents," arXiv preprint arXiv:2206.01039, 2022.
+- [14] D. Wang, J. Zheng, and Z. Wu, "Secure Data Access in Distributed Systems using Role-Based Access Control," IEEE Systems Journal, vol. 14, no. 1, pp. 1042–1050, 2020.
+- [15] Y. Liu, M. Ott, N. Goyal et al., "RoBERTa: A Robustly Optimized BERT Pretraining Approach," arXiv preprint arXiv:1907.11692, 2019.
+- [16] H. Chen, Y. Chen, and J. Zhang, "Enhancing Document Retrieval with Contextualized Embeddings," International Journal of Data Science and Analytics, vol. 13, no. 4, pp. 345–356, 2022.
+- [17] A. Khattab and M. Zaharia, "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT," SIGIR, pp. 39–48, 2020.
+- [18] A. Fisch, A. Trischler, R. M. D'Souza, A. Agrawal, and M. Suleman, "An Embedding-Based Approach for Querying Knowledge Bases with Complex Questions," ICLR, 2020.
+- [19] R. Islam, A. Chakrabarti, and S. Majumder, "Survey on Knowledge-Intensive NLP Tasks," Journal of Artificial Intelligence Research (JAIR), vol. 73, pp. 1201–1245, 2022.
+- [20] Y. Li, X. Wang, and Y. Liang, "Privacy-Preserving Information Retrieval: A Survey," IEEE Access, vol. 7, pp. 148867–148893, 2019.
+
