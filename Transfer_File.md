@@ -1,1 +1,1 @@
-insightstestapp-cxf7h9fye7ecbyh7.canadacentral-01.azurewebsites.net
+(https://www.transfernow.net/dl/20250519JTGB8G4d)
