@@ -1,5 +1,3 @@
-- import os
-- os.environ["CUDA_VISIBLE_DEVICES"] = "-1"             # Force CPU
-- os.environ["OMP_NUM_THREADS"] = "2"                   # Limit CPU threads
-- os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"              # Suppress logs
-- os.environ["TF_FORCE_GPU_ALLOW_GROWTH"] = "true"      # Prevent VRAM overload (if GPU is used)
+infoedgetech-test-app.azurewebsites.net
+ 
+33878A06BCD2BB0551152EA843425723C02C0C3BB5171FE35B6D04ADEBE02B07
