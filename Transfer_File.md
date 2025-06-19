@@ -1,15 +1,13 @@
-Dear [Manager's Name],
+I hope you are doing well.
 
-I hope you're doing well.
+I am writing this with a lot of physical discomfort and emotional distress. Two days ago, I met with a bike accident that left me with injuries on my left hand, left knee, and a severe blow to my lower abdomen. The pain is quite unbearable, and even basic movements like sitting or walking have become extremely difficult. The doctor has strictly advised two weeks of complete bed rest, which I’ve attached as a prescription for your reference.
 
-With a heavy heart, I’m writing to share that I recently met with a bike accident that left me with multiple injuries—my left hand and knee are badly bruised, and I’ve taken a strong hit to my lower abdomen. The pain is intense, and even simple movements like sitting or walking have become extremely difficult. The doctor has strongly advised complete bed rest for at least two weeks.
+To add to this, my father is scheduled for a minor operation in the coming week. I am the only one available to support him during his recovery, and I want to be by his side in this time of need.
 
-As if things weren’t already overwhelming, my father is also scheduled to undergo a minor operation next week. Being the only person available at home to care for him during his recovery, I feel emotionally stretched and physically constrained.
+Given the situation, I sincerely request your approval to work from home for the next three weeks. I’ll continue to stay available on calls, emails, and ensure my tasks are handled with responsibility despite the circumstances.
 
-In this difficult time, I humbly request your support to allow me to work from home for the next three weeks. I assure you that I’ll remain fully committed to my responsibilities and will be reachable throughout, despite my circumstances.
+I am also attaching a PDF that includes images of my injuries, in case you’re comfortable viewing them and need further verification.
 
-Your understanding during this painful and vulnerable period would truly mean a lot to me and my family.
+I truly appreciate your support and understanding during this difficult time — it would really mean a lot to me and my family.
 
-Thank you so much for your compassion and support.
-
-Warm regards,
+Thank you once again.
